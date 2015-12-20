@@ -1,25 +1,33 @@
 
 		
 		<?php
-		$nombre=array('name'=>'nombre','placeholder'=>'Ingresar aquí el nombre del equipo', 'class'=>'form-control');
-		$division= array('name' =>'division', 'placeholder'=>'Ingrese división del equipo aquí', 'class'=>'form-control' );
+		$nombre=array('name'=>'nombre','placeholder'=>'Ingresar aquí el nombre del equipo', 'class'=>'form-control', 'value' => (isset($_POST['nombre'])) ? $_POST['nombre'] : '');
+		$division= array('name' =>'division', 'placeholder'=>'Ingrese división del equipo aquí', 'class'=>'form-control', 'value' => (isset($_POST['division'])) ? $_POST['division'] : '' );
 		$fecha=array('name'=>'fecha');
 		?>
-<h3>Formulario de ingreso para equipos</h3>
 <div class="row">
 	<div class="container">
+		     <?php 
+    echo validation_errors();
+  ?>
 	<div class="panel panel-default">
     <div class="panel-body">
-    	<?= form_open('/equiposCont/recibirDatos');?>
+    	<?php
+     	echo form_open('/equiposCont/recibirDatos');
+     	?>
 		<div class="form-group">
-		<?= form_label('Nombre del equipo: ', 'nombre') ?>
-		<?= form_input($nombre)?>
+		<?php 
+		echo form_label('Nombre del equipo: ', 'nombre');
+		echo form_input($nombre);
+		?>
 		</div>
 		<br>
 
 		<div class="form-group">
-		<?= form_label('División del equipo: ', 'division')?>
-		<?= form_input($division)?>
+		<?php 
+		echo form_label('División del equipo: ', 'division');
+		echo form_input($division);
+		?>
 		</div>
 
 		<div class="form-group">
@@ -27,7 +35,9 @@
 		<?= form_input($fecha)?>
 		</div>
 		<?= form_submit('','Agregar equipo')?>
-		<?= form_close()?>
+		<?php
+		echo form_close();
+		?>
 	</div>
 	</div>
 	</div>
