@@ -2,14 +2,14 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
+<head>
 	<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
     <title>Bienvenido al sistema de gestión de equipos.</title>
 </head>
-<link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -42,7 +42,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div><!-- /.container -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="<?php echo base_base()?>/assets/bootstrap.min.js"></script>
 
 </body>
 </html>
